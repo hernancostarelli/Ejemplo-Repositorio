@@ -1,0 +1,55 @@
+git init --> Sirve para iniciar un repositorio local en una carpeta de nuestro sistema operativo
+
+git branch -M main --> Sirve para cambiar el nombre de la rama master a main (para que no haya conflictos con la rama "main" del repositorio remoto)
+
+git config --global init.defaultBranch main -> Sirve para cambiar la rama pricipal por default a main (para que la proxima vez que usemos un git init se cree la rama main y no la master)
+
+git config --global user.name "Cristian Solís" --> Sirve para poner el nombre de usuario de manera global y que nuestros commits se identifiquen
+git config user.name "Cristian Solís" --> Sirve para poner el nombre de usuario en un repositorio local sobrescribiendo el user.name global en la carpeta donde nos encontramos pero sin afectar al resto de repositorios de nuestra computadora
+
+git config --global user.email "cristian.solis.egg@gmail.com" --> Sirve para para establecer el correo de GitHub
+git config user.email "cristian.solis.egg@gmail.com" --> Sirve para establecer el correo de GitHub en un repositorio local sobrescribiendo el user.name global en la carpeta donde nos encontramos pero sin afectar al resto de repositorios de nuestra computadora
+
+git status --> Permite ver qué archivos han sido modificados, cuáles están en el stage para ser comiteados y cuáles no lo están
+
+git add nombre-de-archivo --> Agrega un archivo modificado al stage
+git add . --> Agrega todos los archivos modificados al stage
+
+git reset nombre-de-archivo --> Saca un nombre de archivo del stage
+
+git commit -m "mensaje del commit" --> Crea un nuevo commit (punto de control) en nuestra rama
+git commit -a -m "nombre-del-commit" -> Sirve para hacer un add . y un commit al mismo tiempo
+
+git remote add origin https://TOKEN@github.com/USUARIO-QUE-CREO-EL-REPOSITORIO/NOMBRE-DEL-PROYECTO.git --> Sirve para agregar un repositorio remoto como "origin" con nuestro public access token y poder realizar nuestros push autenticándonos
+git remote set-url origin https://TOKEN@github.com/USUARIO-QUE-CREO-EL-REPOSITORIO/NOMBRE-DEL-PROYECTO.git --> Sirve para cambiar el link del repositorio remoto "origin" si es que ya lo habíamos creado
+
+git push origin nombre-de-la-rama --> Empuja los cambios de nuestra rama local hacia la rama remota
+
+git pull origin nombre-de-la-rama --> Nos traemos los commits la rama remota a nuestra rama local
+
+git init nuevo-proyecto --initial-branch main --> Crea una carpeta nueva, dentro un repositorio local, y a la rama principal le pone el nombre main
+
+git checkout -b rama-nueva rama-de-la-que-nace -> Crea una nueva rama a partir de otra y también te permite moverte hacia ella
+
+git push origin rama-nueva --> Sirve para actualizar el repositorio remoto con la nueva rama local
+
+git branch -a --> Nos genera una lista de las ramas que tenemos: en blanco las ramas locales, en rojo las ramas remotas, y en verde la rama en la que estamos
+
+git pull --> Sirve para actualizar el repositorio local con ramas nuevas que existan en el repositorio remoto
+
+git branch -d rama-nueva -> Eliminamos la rama nueva local
+
+git revert 234sads2 -> Crea un nuevo commit pero volviendo a uno anterior, sin borrar los que estaban adelante
+
+git log --pretty=oneline --graph --decorate --all -> muestra el git log mucho más bonito con sus respectivas ramas
+
+git reset --soft HEAD~1 -> Elimina el commit que acabas de hacer pero no los cambios (se quedan como modificaciones) sólo funciona sobre el último commit realizado, y sólo si éste todavía no se empuje a la rama remota
+
+git tag -a 1.2.0 -> Creamos un tag para una nueva versión (avanzado) es para generar versiones en producción sobre todo
+
+git config --global init.defaultBranch main -> Sirve para cambiar la rama pricipal por default a main
+
+git commit --amend -m "Este es el mensaje correcto" -> Sirve para cambiar el mensaje del último commit realizado, sólo funciona si éste todavía no se empuje a la rama remota
+
+git config --global alias.st status -> Le establece un alias a git status
+git st
